@@ -904,7 +904,7 @@ class _HomePageWidgetState extends State<HomePageWidget>
                                                         MainAxisSize.max,
                                                     children: [
                                                       Text(
-                                                        '\$ ${productProductRecord.price.toString()}',
+                                                        'CRC${productProductRecord.price.toString()}',
                                                         style: FlutterFlowTheme
                                                                 .of(context)
                                                             .bodyMedium

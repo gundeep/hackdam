@@ -41,9 +41,6 @@ class _PaymantWidgetState extends State<PaymantWidget>
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
 
-    _model.textController3 ??= TextEditingController();
-    _model.textFieldFocusNode3 ??= FocusNode();
-
     animationsMap.addAll({
       'columnOnPageLoadAnimation': AnimationInfo(
         trigger: AnimationTrigger.onPageLoad,
@@ -119,7 +116,7 @@ class _PaymantWidgetState extends State<PaymantWidget>
                         width: 150.0,
                         height: 130.0,
                         fit: BoxFit.cover,
-                        animate: true,
+                        animate: false,
                       ),
                     ],
                   ),
@@ -131,7 +128,7 @@ class _PaymantWidgetState extends State<PaymantWidget>
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        '\$ ${FFAppState().cartsum.toString()}',
+                        'CRC${FFAppState().cartsum.toString()}',
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               font: GoogleFonts.openSans(
                                 fontWeight: FlutterFlowTheme.of(context)
@@ -164,7 +161,7 @@ class _PaymantWidgetState extends State<PaymantWidget>
                         autofocus: false,
                         obscureText: false,
                         decoration: InputDecoration(
-                          hintText: 'Card number',
+                          hintText: 'your circle address',
                           hintStyle:
                               FlutterFlowTheme.of(context).bodySmall.override(
                                     font: GoogleFonts.openSans(
@@ -258,7 +255,7 @@ class _PaymantWidgetState extends State<PaymantWidget>
                           autofocus: false,
                           obscureText: false,
                           decoration: InputDecoration(
-                            hintText: 'MM/YY',
+                            hintText: 'tbd',
                             hintStyle:
                                 FlutterFlowTheme.of(context).bodySmall.override(
                                       font: GoogleFonts.openSans(
@@ -335,96 +332,6 @@ class _PaymantWidgetState extends State<PaymantWidget>
                               .asValidator(context),
                         ),
                       ),
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              10.0, 0.0, 0.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController3,
-                            focusNode: _model.textFieldFocusNode3,
-                            autofocus: false,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              hintText: 'CVC',
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodySmall
-                                  .override(
-                                    font: GoogleFonts.openSans(
-                                      fontWeight: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontWeight,
-                                      fontStyle: FlutterFlowTheme.of(context)
-                                          .bodySmall
-                                          .fontStyle,
-                                    ),
-                                    color: Color(0xFF353535),
-                                    letterSpacing: 0.0,
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodySmall
-                                        .fontStyle,
-                                  ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: BorderRadius.circular(10.0),
-                              ),
-                              filled: true,
-                              fillColor: Color(0xFFE8E8E8),
-                              contentPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 20.0, 0.0, 25.0),
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  font: GoogleFonts.openSans(
-                                    fontWeight: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontWeight,
-                                    fontStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .fontStyle,
-                                  ),
-                                  letterSpacing: 0.0,
-                                  fontWeight: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontWeight,
-                                  fontStyle: FlutterFlowTheme.of(context)
-                                      .bodyMedium
-                                      .fontStyle,
-                                ),
-                            textAlign: TextAlign.center,
-                            keyboardType: TextInputType.number,
-                            validator: _model.textController3Validator
-                                .asValidator(context),
-                          ),
-                        ),
-                      ),
                     ],
                   ),
                 ),
@@ -458,7 +365,7 @@ class _PaymantWidgetState extends State<PaymantWidget>
                             },
                           ).then((value) => safeSetState(() {}));
                         },
-                        text: 'Pay',
+                        text: 'Transfer Circles',
                         options: FFButtonOptions(
                           width: 160.0,
                           height: 50.0,
